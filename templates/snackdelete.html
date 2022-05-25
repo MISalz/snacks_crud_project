@@ -3,13 +3,25 @@
 {% block content %}
 <a href="{% url 'snacklist' %}">Home</a>
 
-<h1>Snack Delete</h1>
+<h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; font-size: 80px; color:aquamarine ;margin-left: 40%">Snack Delete</h1>
 
 <form method="POST">
   {% csrf_token %}
-  <p> do you really want to delete? </p>
+  <p style="margin-left: 10%;font-size: 50px;"> do you really want to delete? {{ snack.title }}</p>
   {{ form.as_p}}
-  <input type="submit" value="save">
+  <br>
+<br>
+<br>
+  <input style = "background-color: rgb(108, 207, 240);
+  color: white;
+  padding: 1.1em 1.9em;
+  text-decoration: none; margin-left: 10%"; type="submit" value="save">
+
+  <a style = "background-color: rgb(240, 108, 181); border: 1px black;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none; margin-left: 10%"; href="{% url 'snacklist' %}">Cancel</a>
+
 </form>
 
 

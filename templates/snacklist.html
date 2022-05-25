@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href="{% url 'snacklist' %}">Home</a>
 
-<h1>Snack List</h1>
+<h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; font-size: 80px;color:aquamarine ;margin-left: 40%">Snacks List</h1>
 
 {% for snack in object_list %}
 
-<h2>
-<a href ="{% url 'snackdetail' snack.pk %}">{{ snack.title }}</a>
+<h2><li>
+
+  <a href ="{% url 'snackdetail' snack.pk %}">{{ snack.title }}</a>
+</li>
 </h2>
 
 {% endfor %}
+<br>
+<a style = "background-color: rgb(135, 141, 226);
+color: white;
+padding: 1em 1.5em;
+text-decoration: none"; href="{% url 'snackcreate' %}">Add a snack</a>
 
 {% endblock content %}
